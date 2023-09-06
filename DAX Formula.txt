@@ -1,0 +1,37 @@
+DAX Formula
+------------
+
+Batting
+
+- Bat Position = AVERAGE('India batting summary'[Bat Position])
+
+- Batting Avg = DIVIDE([Total Runs],[Total Innings Batted],0)
+
+- Boundary % = DIVIDE(MINX('India batting summary', 'India batting summary'[Boundary Runs]), [Total Runs], 0)*100
+
+- Highest Score = MAX('India batting summary'[HS])
+
+- Strike Rate = AVERAGE('India batting summary'[Strike Rate ])
+
+- Total Innings Batted = SUMX('India batting summary', 'India batting summary'[Innings])
+
+- Total Runs = SUM('India batting summary'[Runs])
+
+
+Bowling
+
+- Balls Bowled = SUM(india_bowl[Balls Bowled])
+
+- Bowling Average = DIVIDE([Runs Conceded],[Wickets],0)
+
+- Bowling Strike Rate = DIVIDE([Balls Bowled], [Wickets],0)
+
+- Dot ball % = SUM(india_bowl[Dot Ball %])
+
+- Economy = DIVIDE([Runs Conceded], ([Balls Bowled]/6),0)
+
+- Runs Conceded = SUM(india_bowl[Runs])
+
+- Total Innings Bowled = SUM(india_bowl[Innings])
+
+- Wickets = SUM(india_bowl[Wickets])
